@@ -43,11 +43,14 @@ export const updateSuplier = createAsyncThunk(
 );
 
 //delete
-export const deleteSuplier = createAsyncThunk("supliers/deleteSuplier", async (id) => {
-    const response = await axios.delete(`api/suplier/${id}`,);
+export const deleteSuplier = createAsyncThunk(
+  "supliers/deleteSuplier",
+  async (id) => {
+    const response = await axios.delete(`api/suplier/${id}`);
     return id;
     // console.log(response);
-  });
+  }
+);
 
 ////
 const suplierEntity = createEntityAdapter({
@@ -91,8 +94,8 @@ const suplierSlice = createSlice({
 
     //delete
     [deleteSuplier.fulfilled]: (state, action) => {
-        suplierEntity.removeOne(state, action.payload);
-      },
+      suplierEntity.removeOne(state, action.payload);
+    },
   },
 });
 
