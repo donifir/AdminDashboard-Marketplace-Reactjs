@@ -32,21 +32,20 @@ export const createBarang = createAsyncThunk(
 
 // update
 export const updateBarang = createAsyncThunk(
-  "barang/updateBarang",
-  async ({ formData, id }, { rejectWithValue }) =>
+  "barang/createBarang",
+  async ({formData, id},{rejectWithValue }) =>
     await axios
-      .post(`api/barang/${id}/update`, formData)
+      .post(`api/barang/${id}/update`, formData )
       .then(function (response) {
         console.log(response.data.data);
         return response.data.data;
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data.message);
         return rejectWithValue(error.response.data.message);
       })
 );
 
-// delete
 export const deleteBarang = createAsyncThunk(
   "barang/deleteBarang",
   async (id) =>

@@ -45,7 +45,7 @@ export default function BarangUpdate() {
     formData.append("keterangan", keterangan);
     formData.append("gambar", gambar);
 
-    await dispatch(updateBarang({ formData, id }));
+    await dispatch(updateBarang({formData,id}));
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function BarangUpdate() {
       setStok(barangs.stok);
       setKeterangan(barangs.keterangan);
       setSuplier(barangs.suplier);
-      setGambar(barangs.gambar);
+      // setGambar(barangs.gambar);
       setNamaSuplier(barangs.nama_suplier);
     }
   }, [barangs]);

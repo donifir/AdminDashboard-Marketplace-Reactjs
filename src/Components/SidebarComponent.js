@@ -68,6 +68,14 @@ export default function SidebarComponent() {
                 </p>
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink to={'/dashboard/barang'} className="nav-link">
+                <i className="nav-icon fas fa-th" />
+                <p>
+                  Barang
+                </p>
+              </NavLink>
+            </li>
 
             <li className="nav-item">
               <a href="pages/widgets.html" className="nav-link">
